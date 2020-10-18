@@ -1,0 +1,18 @@
+version: "3"
+services:
+  udagram-reverse-proxy:
+    build:
+      context: ../../udagram-reverse-proxy
+    image: kapilguptansit/udagram-reverse-proxy
+  udagram-backend-user:
+    build:
+      context: ../../udagram-user-api
+    image: kapilguptansit/udagram-backend-user
+  udagram-backend-feed:
+    build:
+      context: ../../udagram-feed-api
+    image: kapilguptansit/udagram-backend-feed
+  udagram-frontend:
+    build:
+      context: ../../udagram-frontend
+    image: kapilguptansit/udagram-frontend

@@ -1,11 +1,21 @@
+# use node image as the base image.
 FROM node:12
+
+# create and change to Working directory
 WORKDIR /usr/src/app
-COPY package*.json ./ 
-COPY tsconfig.json ./
-RUN npm install
-RUN npm install -g typescript
+
+# install app dependencies
+
+COPY package*.json ./
+
+# install dependencies
+RUN npm ci
+
+# copy sources
 COPY . .
-RUN ["/usr/local/bin/tsc"]
-COPY ./www .
+
+# expose port 8080 for the server
 EXPOSE 8080
-CMD [  "node", "./www/server.js" ]
+
+# run npm script
+CMD [ "npm", "run", "prod" ]
