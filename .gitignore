@@ -1,2 +1,4 @@
 set_env.sh
 .env
+node_modules
+www
