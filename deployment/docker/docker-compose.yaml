@@ -3,8 +3,7 @@ services:
   udagram-reverse-proxy:
     image: kapilguptansit/udagram-reverse-proxy
     ports:
-        - 8080:8080
-    restart: always
+      - "8080:8080"
     depends_on:
       - udagram-backend-user
       - udagram-backend-feed

@@ -17,16 +17,14 @@ spec:
       containers:
       - image: kapilguptansit/udagram-reverse-proxy
         name: udagram-reverse-proxy
-        command: [ "sleep" ]
-        args: [ "infinity" ]
         imagePullPolicy: Always
+        ports:
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "512Mi"
+            memory: "1024Mi"
             cpu: "500m"       
-        ports:
-        - containerPort: 8080
       restartPolicy: Always

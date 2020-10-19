@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         service: udagram-backend-user
+        api: external
     spec:
       containers:
       - image: kapilguptansit/udagram-backend-user
